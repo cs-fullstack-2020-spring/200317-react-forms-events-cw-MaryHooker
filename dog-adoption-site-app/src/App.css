@@ -1,5 +1,10 @@
+body{
+  background-color: rgb(211, 102, 211);
+}
+
 .App {
   text-align: center;
+  height: 200px;
 }
 
 #container{
@@ -9,8 +14,15 @@
 
 #adoption{
   grid-column: 1;
+  background-color: pink;
+  height: 100vh;
 }
 
 #form{
   grid-column: 2;
+  background-color: rgb(106, 152, 211);
+}
+
+.border{
+  border: 5px solid rgb(211, 102, 211);
 }

@@ -20,7 +20,8 @@ class AvailableDogs extends Component {
                                     <p>Dog Breed:{dog.dogBreed}</p>
                                     <p>Potty Trained:{dog.trained}</p>
                                     <p>Color:{dog.dogColor}</p>
-
+                                    <br/>
+                                    <hr className='border'/>
                                 </div>
                             )
 

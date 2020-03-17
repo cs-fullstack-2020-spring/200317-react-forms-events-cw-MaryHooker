@@ -21,7 +21,7 @@ class AppContainer extends Component {
             <div id='container'>
 
                 <div id='adoption'>
-                    <h1>AvailableDogs</h1>
+                    <h1>Available Dogs</h1>
                     {/* pass the current state of dogArray to child component */}
                     <AvailableDogs dogArray={this.state.dogArray} />
                 </div>
