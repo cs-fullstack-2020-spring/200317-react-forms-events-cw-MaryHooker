@@ -15,11 +15,11 @@ class AvailableDogs extends Component {
                             return (
                                 <div key={index}>
 
-                                    <p>Dog Name:{dog.dogName}</p>
-                                    <p>Dog Age:{dog.dogAge}</p>
-                                    <p>Dog Breed:{dog.dogBreed}</p>
-                                    <p>Potty Trained:{dog.trained}</p>
-                                    <p>Color:{dog.dogColor}</p>
+                                    <p>Dog Name: {dog.dogName}</p>
+                                    <p>Dog Age: {dog.dogAge}</p>
+                                    <p>Dog Breed: {dog.dogBreed}</p>
+                                    <p>Potty Trained: {dog.trained ? 'Yes':'No'}</p>
+                                    <p>Color: {dog.dogColor}</p>
                                     <br/>
                                     <hr className='border'/>
                                 </div>

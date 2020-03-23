@@ -10,8 +10,11 @@ class AppContainer extends Component {
         }
     }
     //Create a call back function to reference in the child component
-    updateDogArray = (updatedArray) => {
-        this.setState({ dogArray: updatedArray })
+    updateDogArray = (newDog) => {
+        //add passed item to array
+        this.state.dogArray.push(newDog);
+        //update state globally
+        this.setState({ dogArray: this.state.dogArray });
     }
 
     render() {

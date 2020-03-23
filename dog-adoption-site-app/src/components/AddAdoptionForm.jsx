@@ -10,23 +10,13 @@ class AddAdoptionForm extends Component {
             dogBreed: '',
             trained: '',
             dogColor: '',
-            dogArray: [],
         }
     }
 
     //Create function to render when button is pressed
     handleSubmission = (event) => {
         event.preventDefault();
-        //reference empty state array and push the current states using object literal notation
-        this.state.dogArray.push(
-            {
-                dogName: this.state.dogName,
-                dogAge: this.state.dogAge,
-                dogBreed: this.state.dogBreed,
-                trained: this.state.trained,
-                dogColor: this.state.dogColor,
-            }
-        )
+     
         //reset the current state of the dog array
         this.setState(
             {
@@ -34,14 +24,14 @@ class AddAdoptionForm extends Component {
             }
         )
         //pull down call back function from the parent and insert the state of the array so it will be sent and updated in the parent
-        this.props.updateDogArray(this.state.dogArray)
+        this.props.updateDogArray(this.state)
         //clear the form
         this.setState(
             {
                 dogName: '',
                 dogAge: '',
                 dogBreed: '',
-                trained: '',
+                trained: false,
                 dogColor: '',
             }
         )
@@ -78,7 +68,7 @@ class AddAdoptionForm extends Component {
     changeTraining = (event) => {
         this.setState(
             {
-                trained: event.target.value
+                trained: !this.state.trained
             }
         )
     }
@@ -97,26 +87,26 @@ class AddAdoptionForm extends Component {
             <div>
                 <form action="">
                     <fieldset className='border'>
-                        <legend>Adoption Form</legend>
+                        <legend className='bold'>Adoption Form</legend>
                         <br />
                         <div>
-                            <label htmlFor="dogName">Dog Name: </label>
-                            <input type="text" id='dogName' name='dogName' onChange={this.changeName} value={this.state.dogName} />
+                            <label htmlFor="dogName" className='bold'>Dog Name: </label>
+                            <input type="text" id='dogName' name='dogName' onChange={this.changeName} value={this.state.dogName} className='input' />
                         </div>
                         <br />
                         <div>
-                            <label htmlFor="dogAge">Dog Age: </label>
-                            <input type="text" id='dogAge' name='dogAge' onChange={this.changeAge} value={this.state.dogAge} />
+                            <label htmlFor="dogAge" className='bold'>Dog Age: </label>
+                            <input type="text" id='dogAge' name='dogAge' onChange={this.changeAge} value={this.state.dogAge} className='input'/>
                         </div>
                         <br />
-                        <div>   <label htmlFor="dogBreed">Dog Breed: </label>
-                            <input type="text" id='dogBreed' name='dogBreed' onChange={this.changeBreed} value={this.state.dogBreed} />
+                        <div>   <label htmlFor="dogBreed" className='bold'>Dog Breed: </label>
+                            <input type="text" id='dogBreed' name='dogBreed' onChange={this.changeBreed} value={this.state.dogBreed} className='input'/>
                         </div>
                         <br />
                         <div>
                           
-                            <select name="dogColor" id="dogColor" value={this.state.dogColor} onChange={this.changeColor}>
-                                <option>--Please choose a color--</option>
+                            <select name="dogColor" id="dogColor" value={this.state.dogColor} onChange={this.changeColor} className='input' >
+                                <option >--Please choose a color--</option>
                                 <option value="white">white</option>
                                 <option value="brown">brown</option>
                                 <option value="black">black</option>
@@ -127,12 +117,12 @@ class AddAdoptionForm extends Component {
                         </div>
                         <br />
                         <div>
-                            <label htmlFor="trained">Potty Trained: </label>
-                            <input type="checkbox" id='trained' name='trained' onChange={this.changeTraining} value={this.state.trained} />
+                            <label htmlFor="trained" className='bold'>Potty Trained: </label>
+                            <input type="checkbox" id='trained' name='trained' onChange={this.changeTraining} checked={this.state.trained} />
                         </div>
                         <br />
                         <br />
-                        <button onClick={this.handleSubmission}>Submit Form</button>
+                        <button onClick={this.handleSubmission}className='input'>Submit Form</button>
 
                     </fieldset>
                 </form>
